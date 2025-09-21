@@ -5,4 +5,5 @@ spring:
     name: PassValidator
   data:
     mongodb:
-      uri: mongodb://usuario:senha@servidor:27017/SEU_BANCO
+      uri: mongodb://admin:123456@localhost:27017/userCredentials?authSource=admin
+
