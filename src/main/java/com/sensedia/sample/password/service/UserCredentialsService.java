@@ -17,7 +17,7 @@ public class UserCredentialsService {
 
     private final UserCredentialsRepository repository;
 
-    public void save(UserCredentialsDTO request) {
+    public UserCredentials save(UserCredentialsDTO request) {
 
         PasswordValidate.validate(request.getUser(), request.getPassword(), request.getConfirmPassword());
         UserCredentials userCredentials = UserCredentialsDTO.toUserCredentials(request);
@@ -27,10 +27,10 @@ public class UserCredentialsService {
         if (savedUser.getUser() != null) {
             List<String> passwords = PasswordValidate.checkPasswordReuse(request.getPassword(), savedUser.getPasswords());
             savedUser.setPasswords(passwords);
-            repository.save(savedUser);
+            return repository.save(savedUser);
         }
 
-        repository.save(userCredentials);
+        return repository.save(userCredentials);
     }
 
     public UserCredentials findByUser(String user) {
