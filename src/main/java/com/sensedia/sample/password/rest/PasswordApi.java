@@ -1,6 +1,6 @@
 package com.sensedia.sample.password.rest;
 
-import com.sensedia.sample.password.domain.UserCredentials;
+import com.sensedia.sample.password.domain.dto.UserCredentialsDTO;
 import com.sensedia.sample.password.service.UserCredentialsService;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
@@ -22,8 +22,8 @@ public class PasswordApi implements IPasswordApi {
 	}
 
     @Override
-    public ResponseEntity<Void> save(@RequestBody UserCredentials credentials) {
-        service.save(credentials);
+    public ResponseEntity<Void> save(@RequestBody UserCredentialsDTO request) {
+        service.save(request);
         return ResponseEntity.noContent().build();
     }
 

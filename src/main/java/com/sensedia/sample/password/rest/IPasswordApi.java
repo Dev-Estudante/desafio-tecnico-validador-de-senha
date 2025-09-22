@@ -1,6 +1,6 @@
 package com.sensedia.sample.password.rest;
 
-import com.sensedia.sample.password.domain.UserCredentials;
+import com.sensedia.sample.password.domain.dto.UserCredentialsDTO;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -12,5 +12,5 @@ public interface IPasswordApi {
 	ResponseEntity<Object> findAll();
 
     @PostMapping(value = "/password-validations", produces = { "application/json" })
-    ResponseEntity<Void> save(@RequestBody UserCredentials credentials);
+    ResponseEntity<Void> save(@RequestBody UserCredentialsDTO request);
 }
