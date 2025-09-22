@@ -3,6 +3,7 @@ package com.sensedia.sample.password.domain.dto;
 import com.sensedia.sample.password.domain.UserCredentials;
 import java.util.List;
 import lombok.AllArgsConstructor;
+import lombok.Builder;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
@@ -11,6 +12,7 @@ import lombok.Setter;
 @Getter
 @AllArgsConstructor
 @NoArgsConstructor
+@Builder
 public class UserCredentialsDTO {
 
     private String user;
@@ -26,3 +28,4 @@ public class UserCredentialsDTO {
     }
 
 }
+
